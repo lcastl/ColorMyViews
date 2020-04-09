@@ -9,8 +9,6 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var diceImage : ImageView
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -24,6 +22,17 @@ class MainActivity : AppCompatActivity() {
             R.id.box_three_text -> view.setBackgroundColor(Color.BLUE)
             R.id.box_four_text -> view.setBackgroundColor(Color.MAGENTA)
             R.id.box_five_text -> view.setBackgroundColor(Color.BLUE)
+            else -> view.setBackgroundColor(Color.LTGRAY)
+        }
+    }
+
+    private fun showDrawableImage(view: View) {
+        when (view.id) {
+            R.id.box_one_text -> view.setBackgroundResource(R.drawable.dice_1)
+            R.id.box_two_text -> view.setBackgroundResource(R.drawable.dice_2)
+            R.id.box_three_text -> view.setBackgroundResource(R.drawable.dice_3)
+            R.id.box_four_text -> view.setBackgroundResource(R.drawable.dice_4)
+            R.id.box_five_text -> view.setBackgroundResource(R.drawable.dice_5)
             else -> view.setBackgroundColor(Color.LTGRAY)
         }
     }
